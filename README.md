@@ -16,7 +16,9 @@
 - Create the routes for the application
 
 - Create the FKs for the tables in the migration files
-  `rails g migration AddColumnToTable table:references`s
+  `rails g migration AddColumnToTable table:references`
+
+- Make sure you create the tables first before creating the FKs
 
 - Run the migration files
   `rails db:migrate`
