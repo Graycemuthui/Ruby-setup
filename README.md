@@ -4,8 +4,8 @@
   `rails new . --database postgresql`
 
 - Update the postgres user and password in config/database.yml
-  `  username: postgres`
-  `password: Gracewanjiru1573`
+  `  username: postgres
+password: Gracewanjiru1573`
 
 - Create the database
   `rails db:create`
@@ -26,11 +26,11 @@
 - Create the associations in the models.
 
 - Go to the routes and create the namespaced routes
-  `namespace :api do`
-  `namespace :v1 do`
-  `resources :table_name`
-  `end`
-  `end`
+  `namespace :api do
+  namespace :v1 do
+  resources :table_name
+  end
+  end
 
 - Create the controllers for the namespaced routes
 
@@ -40,32 +40,32 @@
 - Run bundle install
 
 - Create a file in the config/initializers/cors.rb
-  `Rails.application.config.middleware.insert_before 0, Rack::Cors do`
-  ` allow do`
-  `origins '*'`
+  `Rails.application.config.middleware.insert_before 0, Rack::Cors do
+  allow do
+  origins '\*'
 
-  ` resource '*',`
-  `headers: :any,`
-  ` methods: %i[get post put patch delete options head]`
-  `end`
-  `end`
+  resource '\*',
+  headers: :any,
+  methods: %i[get post put patch delete options head]
+  end
+  end`
 
   - Add the following gems
-    `gem "bcrypt" `
-    `gem "rack-cors"`
-    ` gem "active_model_serializers"`
-    `gem "jwt"`
+    `gem "bcrypt"
+gem "rack-cors"
+gem "active_model_serializers"
+gem "jwt"`
 
   - Install the gems
     `bundle install`
 
-    - In the config/initializers/cors.rb file add the following
-      `Rails.application.config.middleware.insert_before 0, Rack::Cors do`
-      `allow do`
-      ` origins '*'`
+- In the config/initializers/cors.rb file add the following
+  `Rails.application.config.middleware.insert_before 0, Rack::Cors do
+  allow do
+  origins '\*'
+  resource '\*',
+  headers: :any,
+  methods: %i[get post put patch delete options head]
 
-  ` resource '*',`
-  `headers: :any,`
-  `  methods: %i[get post put patch delete options head]`
-  `end`
-  `end`
+  end
+  end`
