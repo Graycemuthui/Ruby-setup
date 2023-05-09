@@ -40,32 +40,36 @@ password: Gracewanjiru1573`
 - Run bundle install
 
 - Create a file in the config/initializers/cors.rb
+
   `Rails.application.config.middleware.insert_before 0, Rack::Cors do
   allow do
-  origins '\*'
+  origins "\*"
 
-  resource '\*',
-  headers: :any,
-  methods: %i[get post put patch delete options head]
-  end
-  end`
+      resource "*",
+        headers: :any,
+        methods: [:get, :post, :put, :patch, :delete, :options, :head]
 
-  - Add the following gems
-    `gem "bcrypt"
+end
+end`
+
+- Add the following gems
+  `gem "bcrypt"
 gem "rack-cors"
 gem "active_model_serializers"
 gem "jwt"`
 
-  - Install the gems
-    `bundle install`
+- Install the gems
+  `bundle install`
 
-- In the config/initializers/cors.rb file add the following
-  `Rails.application.config.middleware.insert_before 0, Rack::Cors do
+- In the config/initializers/cors.rb file add the following:
+
+  ````Rails.application.config.middleware.insert_before 0, Rack::Cors do
   allow do
-  origins '\*'
+  origins '\*',
   resource '\*',
   headers: :any,
   methods: %i[get post put patch delete options head]
 
   end
-  end`
+  end```
+  ````
