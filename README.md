@@ -529,6 +529,15 @@ http://localhost:3000/api/v1/logout
 
 ```
 
+- Make sure you add this line to the controllers for them to skip the authorization
+
+```
+skip_before_action :authorized
+
+```
+
+- Also make sure the you render the json when creating the index method in the controllers
+
 - Remember to add the seed data to the seeds.rb file and run the command `rails db:seed ` to seed the database with the data.
 
 - This is the end of the backend part.
